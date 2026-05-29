@@ -11,28 +11,21 @@
             box-sizing: border-box;
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
         }
-
-        /* Fundo totalmente branco */
         body {
             background: white;
             padding: 20px 16px;
         }
-
         .container {
             max-width: 1280px;
             margin: 0 auto;
         }
-
-        /* Cabeçalho com faixa preta */
         .header {
             text-align: center;
             margin-bottom: 24px;
-            background: #000000; /* faixa preta */
+            background: #000000;
             padding: 20px 16px;
             border-radius: 16px;
         }
-
-        /* "ROCKET" branco + "LABIZZ" dourado */
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
@@ -42,17 +35,14 @@
             color: white;
         }
         .logo-labizz {
-            color: #d4af37; /* dourado / bege claro */
+            color: #d4af37;
         }
-
         .sub {
             color: #cccccc;
             font-size: 0.85rem;
             margin-top: 8px;
             font-weight: 500;
         }
-
-        /* Grid estilo loja */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(190px, 200px));
@@ -60,8 +50,6 @@
             gap: 16px;
             margin-top: 16px;
         }
-
-        /* Card do produto (fundo branco, borda suave) */
         .product-card {
             background: white;
             border-radius: 12px;
@@ -71,13 +59,10 @@
             border: 1px solid #eee;
             cursor: pointer;
         }
-
         .product-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
-
-        /* Imagem quadrada (1:1) */
         .product-img {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -85,12 +70,9 @@
             background: #f5f5f5;
             display: block;
         }
-
-        /* Informações do produto */
         .product-info {
             padding: 12px 10px 14px;
         }
-
         .product-name {
             font-size: 0.85rem;
             font-weight: 600;
@@ -104,11 +86,9 @@
             min-height: 2.4rem;
             margin-bottom: 10px;
         }
-
-        /* Botão dourado com letras pretas */
         .btn-buy {
             display: block;
-            background: #d4af37; /* dourado */
+            background: #d4af37;
             color: black;
             text-decoration: none;
             text-align: center;
@@ -121,12 +101,10 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .btn-buy:hover {
             background: #c2a030;
             transform: scale(0.98);
         }
-
         footer {
             text-align: center;
             margin-top: 48px;
@@ -135,8 +113,6 @@
             border-top: 1px solid #eaeaea;
             padding-top: 20px;
         }
-
-        /* Ajuste para telas pequenas */
         @media (max-width: 480px) {
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -171,9 +147,9 @@
 </div>
 
 <script>
-    // =============================================
-    // ARRAY DE PRODUTOS (EDITÁVEL PELO PAINEL ADMIN)
-    // =============================================
+    // ===================================================
+    // PRODUTOS - as imagens podem ser URLs ou base64
+    // ===================================================
     let produtos = [
         {
             "nome": "Cordão com Cruz Ortodoxa",
@@ -181,7 +157,6 @@
             "link": "https://s.click.aliexpress.com/e/_c3MuqDQ9"
         }
     ];
-    // =============================================
 
     function renderizarProdutos() {
         const grid = document.getElementById("productsGrid");
@@ -200,7 +175,6 @@
             grid.appendChild(card);
         });
     }
-
     renderizarProdutos();
 </script>
 </body>
