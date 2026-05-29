@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Minha Loja - Estilo Shopee</title>
+    <title>LOJA ROCKET LABIZZ</title>
     <style>
         * {
             margin: 0;
@@ -12,8 +12,9 @@
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
         }
 
+        /* Fundo totalmente branco */
         body {
-            background: #f5f5f5;
+            background: white;
             padding: 20px 16px;
         }
 
@@ -22,25 +23,36 @@
             margin: 0 auto;
         }
 
-        /* Cabeçalho estilo Shopee */
+        /* Cabeçalho com faixa preta */
         .header {
             text-align: center;
             margin-bottom: 24px;
+            background: #000000; /* faixa preta */
+            padding: 20px 16px;
+            border-radius: 16px;
         }
 
-        h1 {
+        /* "ROCKET" branco + "LABIZZ" dourado */
+        .logo {
             font-size: 1.8rem;
-            font-weight: 600;
-            color: #ee4d2d; /* laranja Shopee */
-            margin-bottom: 4px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .logo-rocket {
+            color: white;
+        }
+        .logo-labizz {
+            color: #d4af37; /* dourado / bege claro */
         }
 
         .sub {
-            color: #555;
-            font-size: 0.9rem;
+            color: #cccccc;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-weight: 500;
         }
 
-        /* Grid estilo Shopee: cards com largura fixa (responsivo) */
+        /* Grid estilo loja */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(190px, 200px));
@@ -49,39 +61,40 @@
             margin-top: 16px;
         }
 
-        /* Card do produto */
+        /* Card do produto (fundo branco, borda suave) */
         .product-card {
             background: white;
-            border-radius: 4px;
+            border-radius: 12px;
             overflow: hidden;
             transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
             cursor: pointer;
         }
 
         .product-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        /* Imagem quadrada (1:1) – igual Shopee */
+        /* Imagem quadrada (1:1) */
         .product-img {
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            background: #f0f0f0;
+            background: #f5f5f5;
             display: block;
         }
 
         /* Informações do produto */
         .product-info {
-            padding: 10px 8px 12px;
+            padding: 12px 10px 14px;
         }
 
         .product-name {
             font-size: 0.85rem;
-            font-weight: 500;
-            color: #222;
+            font-weight: 600;
+            color: #111;
             line-height: 1.4;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -89,37 +102,41 @@
             overflow: hidden;
             text-overflow: ellipsis;
             min-height: 2.4rem;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        /* Botão de compra estilo Shopee (laranja) */
+        /* Botão dourado com letras pretas */
         .btn-buy {
             display: block;
-            background: #ee4d2d;
-            color: white;
+            background: #d4af37; /* dourado */
+            color: black;
             text-decoration: none;
             text-align: center;
-            padding: 8px 0;
-            border-radius: 4px;
+            padding: 10px 0;
+            border-radius: 40px;
             font-size: 0.8rem;
-            font-weight: 600;
-            transition: background 0.2s;
+            font-weight: 700;
+            transition: all 0.2s;
             width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .btn-buy:hover {
-            background: #d73211;
+            background: #c2a030;
+            transform: scale(0.98);
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 48px;
             font-size: 0.7rem;
-            color: #999;
-            padding-bottom: 20px;
+            color: #888;
+            border-top: 1px solid #eaeaea;
+            padding-top: 20px;
         }
 
-        /* Ajuste para telas muito pequenas */
+        /* Ajuste para telas pequenas */
         @media (max-width: 480px) {
             .products-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -132,8 +149,11 @@
                 font-size: 0.75rem;
             }
             .btn-buy {
-                font-size: 0.7rem;
-                padding: 6px 0;
+                font-size: 0.65rem;
+                padding: 8px 0;
+            }
+            .logo {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -141,11 +161,13 @@
 <body>
 <div class="container">
     <div class="header">
-        <h1>🛍️ Minha Loja</h1>
-        <div class="sub">Produtos com qualidade e preço incrível</div>
+        <div class="logo">
+            <span class="logo-rocket">ROCKET</span> <span class="logo-labizz">LABIZZ</span>
+        </div>
+        <div class="sub">Loja oficial — qualidade e estilo</div>
     </div>
     <div class="products-grid" id="productsGrid"></div>
-    <footer>© 2025 Minha Loja - Todos os direitos reservados</footer>
+    <footer>© 2025 LOJA ROCKET LABIZZ - Todos os direitos reservados</footer>
 </div>
 
 <script>
